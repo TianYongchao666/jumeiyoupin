@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Document</title><link rel=stylesheet href=../css/detail.css><link rel=stylesheet href=../lib/bootstrap/dist/css/bootstrap.min.css></head><body><div class=headerwrap><div class=header><span>欢迎来到聚美</span> <a href=./login.html>请登录</a> <a href=./zhuce.html>快速注册</a><ul><li><a href="">正品保证</a></li><li><a href="">订单查询</a></li><li><a href="">❤收藏的品牌</a></li><li class=myjm><a href="">我的聚美<span class=caret></span></a><div class=myjumei><ul><li><a href="">我的订单</a></li><li><a href="">我的现金券</a></li><li><a href="">我的红包</a></li><li><a href="">我的余额</a></li><li><a href="">我的提现退款</a></li><li><a href="">我的收藏</a></li><li><a href="">我的心愿单</a></li><li><a href="">会员中心</a></li><li><a href="">礼品卡兑换</a></li></ul></div></li><li>|</li><li class=phone>手机聚美</li><li>|</li><li><a href="">更多<span class=caret></span></a></li></ul></div></div><div class=search><div class=logo><a href=""><img src=http://p0.jmstatic.com/templates/jumei/images/logo_new_v1.jpg alt=""></a></div><div class=cart><div class=cart_img><img src=http://p0.jmstatic.com/assets/cart.gif alt=""></div><button><a href=./cart.html>去购物车结算</a></button></div></div><div class=navwrap><div class=nav><ul><li>首页</li><li>极速免税店</li><li>母婴特卖</li><li>美妆商城<span class=caret></span></li><li>国际轻奢</li><li>服饰运动</li><li>鞋包配饰</li></ul></div></div><div id=popbody class=popbody><div class=pop_img><img class=my-foto src=http://p2.jmstatic.com/product/005/126/5126842_std/5126842_dx_1000_400.jpg alt=""><div class=pop_min_img><img src=http://p2.jmstatic.com/product/005/126/5126842_std/5126842_dx_1000_400.jpg alt=""></div></div><div class=pop_r><h5 class=pop_tit>【聚美直发】袁咏仪、张馨予力荐韩国进口acwell艾珂薇n4面霜50g</h5><p class=pop_price><span>￥</span>99</p><div class=dot_line></div><div class=pop_change><span class=yunfei>运费</span> <span class=baoyou>新人包邮</span></div><div class="dot_line dot_line_top"></div><div class=pop_fuwu><span>服务</span><ul class=commitment><li><a href=http://pop.jumei.com/i/pop/rule target=_blank>质量保险</a></li><li><a href=http://pop.jumei.com/i/pop/rule target=_blank>闪电发货</a></li></ul></div><div class="dot_line dot_line_top"></div><button class=addCart><span></span> 加入购物车</button></div></div><div id=footer_container><div class=footer_con id=footer_copyright><p class=footer_copy_con>Copyright © 2010-2015 北京创锐文化传媒有限公司 Jumei.com 保留一切权利。客服热线：400-123-8888<br>京公网安备 11010102001226 号 | <a href=http://www.miibeian.gov.cn target=_blank rel=nofollow>京ICP证111033号</a> | 食品流通许可证 SP1101051110165515（1-1） <a href=http://mp5.jmstatic.com/mobile/pc/chuangrui.jpg target=_blank rel=nofollow>营业执照</a> <a href=http://f1.jmstatic.com/static_account/dist/v1.0.85067/images/other/zhidu.pdf target=_blank rel=nofollow>公示制度</a></p><p><a href=javascript:void(0) class="footer_copy_logo logo01" rel=nofollow></a> <a href=http://www.itrust.org.cn/Home/Index/itrust_certifi/wm/1693268180.html target=_blank class="footer_copy_logo logo02" rel=nofollow></a> <a href=javascript:void(0) class="footer_copy_logo logo03" rel=nofollow></a> <a href=javascript:void(0) class="footer_copy_logo logo04" rel=nofollow></a> <a href="https://ss.knet.cn/verifyseal.dll?sn=e1908021101057894518jv000000&amp;ct=df&amp;pa=nU60yFg7nXl37yQG" target=_blank class="footer_copy_logo logo05" rel=nofollow></a></p></div></div><script src=../lib/jquery/dist/jquery.min.js></script><script src=../js/zoomsl.min.js></script><script type=text/javascript>// 放大镜
+        jQuery(function(){
+           
+              $(".my-foto").imagezoomsl({
+                
+                 zoomrange: [3, 3]
+              });
+           });
+
+        // 1. 获取 localStorage 里面的数据
+        const info = JSON.parse(localStorage.getItem('goodsInfo'))
+        // 2. 判断数据是否存在
+        if (!info) {
+        // 能执行表示 !info 是一个 true
+        // 表示 info 是一个 false
+        // 表示数据不存在
+        alert('您要查看的数据不存在')
+        // 跳转回列表页面
+        window.location.href = './index.html'
+        }
+
+        // 3. 渲染页面
+        bindHtml()
+        function bindHtml() {
+        $('.pop_img img').attr('src', info.images)
+        $('.pop_r .pop_tit').text(info.name)
+        $('.pop_r .pop_price').text('￥: ' + info.price)
+        }
+        // console.log(info)
+
+        // 4. 点击添加购物车
+        // 4-1. 添加点击事件
+        $('.addCart').click(() => {
+        // console.log('我要添加购物车了')
+
+        // 4-2. 判断是否登录
+
+        // 4-3. 加入到购物车数组里面
+        //    先拿到 localStorage 里面的那个数组信息
+        //    如果原先没有数据, 那么我就用一个空数组来代替
+        //    如果有数据, 就用我们的数据
+        const cartList = JSON.parse(localStorage.getItem('cartList')) || []
+        console.log(cartList);
+        
+
+        // 象数组里面把本条数据添加进去
+        // 4-4. 判断有没有这个数据
+        //      每一个数据都有一个自己的 id
+        //      只要看数组里面有没有 id 一样的数据, 就知道有没有这个数据了
+        //      数组常用方法有一个叫做 some 的方法
+        //      返回值:
+        //        true: 表示数组里面有这个信息
+        //        false: 表示数组里面没有这个信息
+        let exits = cartList.some(item => {
+            // 数组里面每一个的 id === 本页面的这条数据的 id
+            return item.id === info.id
+        })
+        console.log(exits);
+
+        if (exits) {
+            // 表示有这个信息了, 我们要让 number ++
+            // console.log('已经存在 number ++')
+            // 找到这个信息给他 number ++
+            let data = null
+            for (let i = 0; i < cartList.length; i++) {
+            if (cartList[i].id === info.id) {
+                data = cartList[i]
+                break
+            }
+            }
+            // data 就是我找到的这个信息
+            data.number++
+
+            // 4-5. 数量添加的时候, 小计价格要改变
+            data.xiaoji = data.number * data.price // 数量 * 单价
+        } else {
+            // 表示没有这个信息, 直接 push 就可以了
+            // push 之前, 象里面添加一个 number 信息为 1
+            info.number = 1
+
+            // 4-5. 多添加一些信息
+            info.xiaoji = info.price // 因为默认是第一个, 小计就是单价
+            info.isSelect = false // 默认不选中
+            cartList.push(info)
+        }
+
+        // 在存储到 localStorage 里面
+        localStorage.setItem('cartList', JSON.stringify(cartList))
+        })</script></body></html>

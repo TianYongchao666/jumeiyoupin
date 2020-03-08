@@ -1,0 +1,407 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body, html {
+    width: 100%;
+    height: 100%;
+    /* overflow-y: hidden; */
+    /* background: #f7f7f7; */
+}
+ul, ol, li {
+    list-style: none;
+}
+a{
+    text-decoration:none;
+}
+
+.header,.search,.nav,.group_show{
+    width: 960px;
+    margin: 0 auto;
+    /* overflow-y: hidden; */
+}
+.headerwrap{
+    width: 100%;
+    height: 28px;
+    background-color: #F2F2F2;
+    border-top: 1px solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5;
+    
+}
+.header{
+    line-height: 28px;
+    font-size: 12px;
+}
+.header a{
+    margin-left:20px;
+    color: #8b8b8b;
+}
+.header span{
+    color: #8B8B8B;
+}
+.header a:hover{
+    color: #ED155B;
+    text-decoration:none;
+}
+.header ul{
+    float: right;
+}
+.header ul li{
+    list-style: none;
+    float: left;
+    margin-left: 14px ;
+    position: relative;
+    height: 28px;
+    color: #8B8B8B;
+    
+}
+.header .phone{
+    color: #ED155B;
+    text-align: center;
+    cursor:pointer;
+}
+
+.myjumei{
+    display: none; 
+    position: absolute;
+    top: 29px;
+    left: -35px;
+    background: #fff;
+    zoom: 1;
+    z-index: 999;
+    border: 1px solid #ddd;
+    padding: 8px 0;
+    width: 110px;
+    border-top: 0;
+    box-shadow: 1px 3px 5px rgba(0,0,0,.2);
+}
+.myjumei li{
+    margin-top: 2px;
+    
+}
+.myjumei a{
+    color: #8B8B8B;
+}
+
+
+/* logo */
+.search{
+    height: 110px;
+    padding-top: 1px;
+    position: relative;  
+}
+.logo{
+    float: left;
+    margin-top: 20px;
+    width: 165px;
+    height: 85px;
+}
+.logo img{
+    width: 165px;
+    height: 85px;
+}
+
+.search .text {
+    float: left;
+    margin-top: 49px;
+    margin-left: 5px;
+    font-weight: normal;
+}
+.search .text .phone {
+    font-size: 16px;
+}
+.search .text .time {
+    color: grey;
+}
+.search .order_path {
+    float: right;
+    width: 377px;
+    height: 48px;
+    background: url(http://f0.jmstatic.com/static_cart/dist/20191009_1/images/order_path.png) no-repeat;
+    background-position: -2px -2px;
+    margin-top: 32px;
+}
+
+/* 导航栏 */
+.navwrap{
+    width: 100%;
+    height: 18px;
+    /* background-color: #101010; */
+    border-top: 2px solid #e5e5e5;
+}
+
+.content_show_wrap{
+    min-height: 350px;
+}
+.content_header_left{
+    float: left;
+}
+.content_header_left .icon_small {
+    vertical-align: -5px;
+    background: url(http://f0.jmstatic.com/static_cart/dist/20191009_1/images/show/icons.png) no-repeat;
+    background-position: -8px -5px;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    font-style: normal;
+}
+.top_banner{
+    float: right;
+}
+.top_banner ul li{
+    float: left;
+    margin-left: 10px;
+}
+.top_banner ul li span {
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    color: #000;
+    font-size: 12px;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: default;
+}
+.top_banner .header_icons li span .header_icon {
+    float: left;
+    width: 26px;
+    height: 25px;
+    margin-right: 5px;
+    background: url(http://f0.jmstatic.com/static_cart/dist/20191009_1/images/header_sprites1.png) no-repeat;
+}
+.top_banner .header_icons li span .icon_zhenpin {
+    background-position: 0 -107px;
+}
+.top_banner .header_icons li span .icon_tuihuo {
+    background-position: 0 -142px;
+}
+.top_banner .header_icons li span .icon_baoyou {
+    background-position: 0 -177px;
+}
+.group_show .table{
+    width: 100%;
+    margin: 10px 0 0;
+    font-size: 12px;
+    border: 1px solid #eee;
+}
+
+.group_show .table th {
+    height: 34px;
+    padding: 0;
+    text-align: center;
+    font-weight: 400;
+    border-bottom: 1px solid #eee;
+    background: #fafafa;
+    color: #000;
+}
+.group_show .table th.cart_overview {
+    width: 56%;
+}
+.group_show .table .cart_group_header {
+    height: 34px;
+    line-height: 34px;
+    text-align: left;
+    border-left: 5px solid #851b97;
+}
+.group_show .table .cart_group_header .cart_group_selector{
+    margin-left: 5px;
+}
+.group_show .table .cart_group_header h2 {
+    display: inline-block;
+    /* *display: inline; */
+    /* *zoom: 1; */
+    margin: 0 5px 0 2px;
+    padding: 0;
+    font-size: 100%;
+}
+.table th.cart_num, .table th.cart_price {
+    width: 12%;
+    line-height: 34px;
+
+}
+.table th.cart_option, .table th.cart_total {
+    width: 10%;
+    line-height: 34px;
+}
+.group_show .table tbody .tdone{
+    width: 60%;
+}
+.table tbody .tdone ul li{
+    float: left;
+    margin-right: 30px;
+    
+}
+.table tbody .tdone .tdone_ipt{
+    margin-top: 20px;
+}
+.table tbody .tdone .tdone_img{
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+}
+.table tbody .tdone .tdone_img img{
+    /* width: 60px; */
+    height: 60px;
+    margin-left: -40px;
+}
+.table tbody .tdone ul li:last-child{
+    margin-top: 20px;
+    margin-left: 5px;
+}
+.table tbody .tdd{
+    width: 96px;
+    height: 60px;
+    padding: 20px;
+    text-align: center;
+    padding-top: 30px;
+    /* line-height: 60px; */
+}
+.table tbody .tb_price{
+    font-weight: 700;
+    font-family: Arial,Helvetica;
+}
+.item_quantity_editer {
+    width: 74px;
+}
+.item_quantity_editer .decrease_one, .item_quantity_editer .increase_one, .item_quantity_editer .item_quantity {
+    float: left;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+.item_quantity_editer .decrease_one.disabled, .item_quantity_editer .increase_one{
+    cursor: not-allowed;
+    font-size: 16px;
+    color: #666;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+}
+.item_quantity_editer .item_quantity {
+    width: 30px;
+    height: 20px;
+    border: none;
+    /* border-top: 1px solid; */
+    /* border-bottom: 1px solid; */
+    border-color: #e0e0e0;
+}
+.table tbody .tb_xiaoji{
+    color: #ed145b;
+    font-weight: 700;
+}
+.table tbody .tb_delete{
+    text-align: center;
+    position: relative;
+}
+.table tbody .tb_delete span{
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: url(http://f0.jmstatic.com/static_cart/dist/20191009_1/images/show/icons.png) no-repeat;
+    background-position: -7px -27px;
+    cursor: pointer;
+    position: absolute;
+    right: 70px;
+}
+.group_show .table .tfoot{
+    width: 958px;
+    height: 40px;
+    /* margin: 10px 0; */
+    line-height: 40px;
+    /* border: 1px solid #eee; */
+    background: #fafafa;
+}
+.table .tfoot tr td:first-child {
+    height: 40px;
+    line-height: 40px;
+}
+.table .tfoot tr td:first-child a{
+    color: #000;
+}
+.table .tfoot tr td:first-child a:hover{
+    color: #ed145b;
+}
+.table .tfoot tr td:first-child .tf_sp1{
+    margin: 0 10px;
+    color: #888;
+}
+.table .tfoot tr td:first-child .del{
+    cursor: pointer;
+
+}
+.table .tfoot .right_handler,.table .tfoot .right_zj{
+    height: 40px;
+    line-height: 40px;
+}
+.right_handler .total_amount, .right_zj .total_price {
+    color: #ed145b;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: "Microsoft YaHei","Microsoft JhengHei",STHeiti,MingLiu;
+}
+.table .tfoot tr td:last-child{
+    padding: 0;
+    height: 40px;
+}
+.table .tfoot #go_to_order {
+    width: 145px;
+    height: 100%;
+    margin: 0 0 0 10px;
+    font-size: 18px;
+    font-family: "Microsoft YaHei","Microsoft JhengHei",STHeiti,MingLiu;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    background: #ed145b;
+    border-radius: 0px;
+
+}
+
+/* footer */
+#footer_container {
+    overflow: hidden;
+    position: relative;
+    bottom: -1px;
+    margin-top: 100px;
+}
+.footer_con{
+    /* background: #fff; */
+    color: #000;
+    text-align: center;
+    width: 1090px;
+    margin: 0 auto;
+    overflow: hidden;
+    line-height: 20px;
+    padding-bottom: 80px;
+}
+#footer_copyright .footer_copy_con {
+    padding: 14px 0 18px;
+    line-height: 23px;
+}
+#footer_copyright a {
+    color: #000;
+}
+#footer_copyright .footer_copy_logo {
+    width: 126px;
+    height: 50px;
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 8px;
+    background: url(../images/footer_btm_icon.png) no-repeat;
+    border-bottom: 1px solid #d7d7d7;
+}
+#footer_copyright .logo02 {
+    background-position: -126px 0;
+}
+#footer_copyright .logo03 {
+    background-position: -252px 0;
+}
+#footer_copyright .logo04 {
+    background-position: -378px 0;
+}
+#footer_copyright .logo05 {
+    background-position: -504px 0;
+}

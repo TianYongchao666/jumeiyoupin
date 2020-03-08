@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/zhuce.css">
+</head>
+<body>
+    <!-- herder -->
+    <div id="hader_container">
+        <div id="logo">
+            <a href="" id="home">
+                <img src="https://f5.jmstatic.com/static_passport/dist/v1.0.137928/images/logo_new_v1.jpg" alt="">
+            </a>
+            <div class="herder_logo_box">
+                <a href="http://www.jumei.com/activity_guarantee.html?from=header#bold_consignment" rel="nofollow" class="top_link lightning" target="_blank"></a>
+                <a href="http://www.jumei.com/help/two_for_freeshipping?from=header" rel="nofollow" class="top_link gild" target="_blank"></a>
+                <a href="http://www.jumei.com/activity_aca.html?from=top" rel="nofollow" class="top_link credit" target="_blank"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="loginWrap loginWrapVerify">
+        <div class="loginBoardWrap">
+            <div class="loginImage"></div>
+            <div class="loginBord">
+                <div class="loginTit">
+                    <div class="tosignup">
+                        已有账号
+                        <a href="./login.html">在此登录</a>
+                    </div>
+                    <h1>
+                        <strong>用户注册</strong>
+                    </h1>
+                </div>
+                <form action="">
+                    <div class="usname">
+                        <input type="text" id="username" placeholder="请输入用户名">
+                    </div>
+                    
+                    <div class="psword">
+                        <input type="text" id="password" placeholder="请输入密码">
+                   </div>
+                   
+                   <input class="sub" type="submit" value="注册">
+
+                </form>
+                <p style="margin-top: 30px;">
+                    <a href="http://www.jumei.com/i/help/user_terms" rel="nofollow" target="_blank" style="color:#ed145b;">《聚美优品用户协议》</a>
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="http://www.jumei.com/help/privacy_policy" rel="nofollow" target="_blank" style="color:#ed145b;">《聚美隐私权政策》</a>
+                </p>
+                <!-- <div class="iconAccout">
+                    <div>你也可以使用以下账号登录</div>
+                    <p>
+                        <a href="/i/extconnect/?site_name=cb_qq&amp;redirect=http%3A%2F%2Fbj.jumei.com%2F" class="a1" title="QQ">QQ</a>
+                        <a href="/i/extconnect/?site_name=alipay&amp;redirect=http%3A%2F%2Fbj.jumei.com%2F" class="a2" title="支付宝">支付宝</a>
+                        <a href="/i/extconnect/?site_name=sina_weibo&amp;redirect=http%3A%2F%2Fbj.jumei.com%2F" class="a3" title="新浪微博">新浪微博</a>
+                        <a href="/i/extconnect/?referer=360tuan_dh&amp;site_name=site_360&amp;redirect=http%3A%2F%2Fbj.jumei.com%2F" class="a4" title="360">360</a>
+                        <a href="/i/extconnect/?site_name=baidu&amp;redirect=http%3A%2F%2Fbj.jumei.com%2F" class="a5" title="百度">百度</a>
+                    </p>
+                </div> -->
+                <div class="shadow_l"></div>
+                <div class="shadow_r"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div id="footer_container">
+        <div class="footer_con" id="footer_copyright">
+            <p class="footer_copy_con">
+                Copyright © 2010-2015 北京创锐文化传媒有限公司 Jumei.com 保留一切权利。客服热线：400-123-8888 <br>
+                京公网安备 11010102001226 号 | <a href="http://www.miibeian.gov.cn" target="_blank" rel="nofollow">京ICP证111033号</a> | 食品流通许可证 SP1101051110165515（1-1）
+                <a href="http://mp5.jmstatic.com/mobile/pc/chuangrui.jpg" target="_blank" rel="nofollow">营业执照</a>
+                <a href="http://f1.jmstatic.com/static_account/dist/v1.0.85067/images/other/zhidu.pdf" target="_blank" rel="nofollow">公示制度</a>
+            </p>
+            
+        </div>
+    </div>
+    <script src="../js/ajax.js"></script>
+    <script>
+        var userinpt = document.querySelector('#username');
+        var passinpt = document.querySelector('#password');
+        var form = document.querySelector('form');
+        var oSpan = document.querySelector('.sp1')
+        console.log(userinpt,passinpt,form,oSpan);
+        form.onsubmit = function(e){
+        	var e = e || window.event
+        	e.preventDefault();
+        	
+        	var uname = userinpt.value;
+        	var upass = passinpt.value;
+        	
+        	if(!uname || !upass){
+        		oSpan.style.display = 'block';
+        		return
+        	}
+
+        postSend('../lib/zhuce.php',function(res){
+        	if(res){
+				alert('注册成功，快去登录吧')
+        		window.location.href = './login.html';
+        	}else{
+        		oSpan.style.display = 'block';
+        		oSpan.style.color = 'red'
+        	}
+        },`username=${uname}&password=${upass}`)
+        }
+    </script>
+</body>
+</html>
